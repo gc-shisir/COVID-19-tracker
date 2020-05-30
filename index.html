@@ -15,40 +15,41 @@
     </section>
     <!-- Header section ends here -->
 
+    <!-- Section for world data begins here -->
     <section id="world-data" class="bg-info">
         <div class="container-fluid d-flex flex-column">
             <h2 class="m-auto text-white my-1">Global Results</h2>
             <div class="container d-flex justify-content-between text-white">
-                <div id="newConfirmed d-flex flex-column">
+                <div id="newConfirmed" class="bg-danger rounded p-2 my-2">
                     <h4 class="text-center">New Confirmed</h4>
-                    <h4 class="text-center newConfirmed">725</h4>
+                    <h4 class="text-center newConfirmed">0</h4>
                 </div>
-                <div id="totalConfirmed" >
+                <div id="totalConfirmed"  class="bg-primary rounded p-2 my-2">
                     <h4 class="text-center">Total Confirmed</h4>
-                    <h4 class="text-center totalConfirmed" >725</h4>
+                    <h4 class="text-center totalConfirmed" >0</h4>
                 </div>
-                <div id="newDeaths">
+                <div id="newDeaths" class="bg-danger rounded p-2 my-2">
                     <h4 class="text-center">New Deaths</h4>
-                    <h4 class="text-center newDeaths">725</h4>
+                    <h4 class="text-center newDeaths">0</h4>
                 </div>
-                <div id="totalDeaths">
+                <div id="totalDeaths" class="bg-primary rounded p-2 my-2">
                     <h4 class="text-center">Total Deaths</h4>
-                    <h4 class="text-center totalDeaths">725</h4>
+                    <h4 class="text-center totalDeaths">0</h4>
                 </div>
-                <div id="newRecovered">
+                <div id="newRecovered" class="bg-danger rounded p-2 my-2">
                     <h4 class="text-center">New Recovered</h4>
-                    <h4 class="text-center newRecovered" >725</h4>
+                    <h4 class="text-center newRecovered" >0</h4>
                 </div>
-                <div id="totalRecovered">
+                <div id="totalRecovered" class="bg-primary rounded p-2 my-2">
                     <h4 class="text-center">Total Recovered</h4>
-                    <h4 class="text-center totalRecovered">725</h4>
+                    <h4 class="text-center totalRecovered">0</h4>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Section for world data begins here -->
+    <!-- Section for world data ends here -->
 
-    <!-- section for world data begins here -->
+    <!-- section for country data begins here -->
     <section id="country-data" class="bg-secondary">
         <div class="container-fluid">
             <div class="title d-flex flex-column">
@@ -56,8 +57,7 @@
                     Result for particular country
                 </h2>
                 <div class="container">
-                    <input type="text" placeholder="Country..." class="form-control m-auto w-25" id="search">
-                    <button class="btn btn-primary d-block mx-auto my-2 searchButton">Search</button>
+                    <input type="text" placeholder="Search for a particular Country..." class="form-control mx-auto w-50 my-2" id="search">
                 </div>
                 <table class="table table-bordered">
                     <thead>

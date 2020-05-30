@@ -1,3 +1,4 @@
+
 window.onload=getData;
 function getData(){
     fetch('https://api.covid19api.com/summary').then(function(res){
@@ -26,32 +27,49 @@ function getData(){
         const countriesCount=countries.length;
         let i;
         let length=1;
-        let searchText=document.querySelector('search').value;
-        let searchButton=document.querySelector('searchButton');
-
-        searchButton.addEventListener('click',addData());
-
-        // function addData(){
-        //     if(searchText.lowercase)
-        // }
 
         for(i=0;i<=countriesCount;i++){
         output=`
+        <tr>
             <td>${length}</td>
-            <td>${countries[i].Country}</td>
+            <td id="country">${countries[i].Country}</td>
             <td>${countries[i].NewConfirmed}</td>
             <td>${countries[i].TotalConfirmed}</td>
             <td>${countries[i].NewDeaths}</td>
             <td>${countries[i].TotalDeaths}</td>
             <td>${countries[i].NewRecovered}</td>
             <td>${countries[i].TotalRecovered}</td>           
+        </tr>
         `;
         length++;
 
         document.querySelector('.table-data').innerHTML+=output;
         }
-        // document.querySelector('.table-data').innerHTML=output;
 
     })
-    
+
+    // For search par
+    document.querySelector('#search').addEventListener('input',filterItems);
+
+    function filterItems(e){
+
+        // Converting to lowercase
+        let text=e.target.value.toLowerCase();
+        // console.log(text)
+        const listGroups=document.querySelectorAll('tbody tr');
+        // console.log(listGroups);
+        listGroups.forEach(listItem=>{
+            const countryName=listItem.querySelector('#country').innerText.toLowerCase();
+            // console.log(countryName);
+            if(countryName.indexOf(text) === -1){
+                console.log(listItem.parentElement);
+                // listItem.style.display='none';
+                listItem.classList.add('remove')
+            }else{
+                listItem.classList.remove('remove');
+            }
+        })
+    }
 }
+
+
